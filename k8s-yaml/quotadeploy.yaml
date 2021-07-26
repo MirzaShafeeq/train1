@@ -1,9 +1,14 @@
-kind: Deployment
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
+kind: Deployment 
 metadata:
   name: deployments
+  labels:
+    objtype: deployment
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      objtype: deployment
   template:
     metadata:
       name: testpod8
@@ -13,7 +18,8 @@ spec:
      containers:
        - name: c00
          image: ubuntu
-         command: ["/bin/bash", "-c", "while true; do echo Hello-Adam; sleep 5 ; done"]
+         command: ["/bin/bash", "-c", "while true; do echo Hello-
+Adam; sleep 5 ; done"]
          resources:
-            requests:
-              cpu: "200m"
+           requests:
+             cpu: "200m"
