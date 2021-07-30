@@ -1,0 +1,10 @@
+--- 
+- 
+  hosts: localhost
+  user: e1012466
+  become: yes
+  tasks: 
+    - 
+      name: "Install httpd on server"
+      yum: "pkg=httpd state=installed update_cache=true"
+

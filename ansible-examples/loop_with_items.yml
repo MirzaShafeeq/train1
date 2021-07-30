@@ -1,0 +1,10 @@
+--- # Loop Playbook 
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: add a list of users
+      user: name={{ item.name }} groups={{ item.groups }}  state=present
+      with_items:
+        - { name: testuser1, groups: wheel }
+        - { name: testuser2, uid: 1003, groups: root }
+

@@ -1,0 +1,12 @@
+--- 
+- hosts: localhost
+  tasks:
+    - name: first name
+      raw: echo "vignesh " > /tmp/LOG
+      tags:
+        - firstname
+    - name: second name
+      raw: echo "M " > /tmp/LOG
+      tags:
+        - secondname
+

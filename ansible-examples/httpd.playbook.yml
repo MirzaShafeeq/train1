@@ -1,0 +1,18 @@
+--- 
+- 
+  connection: ssh
+  gather_facts: false
+  hosts: localhost 
+  become: yes
+  tasks: 
+    - 
+      action: "yum name=httpd state='{{ app_state}}'"
+      name: "Install HTTPD server on centos 7"
+  user: ansible
+  vars: 
+    playbook_version: 0.1b
+  vars_prompt: 
+    - 
+      name: app_state
+      prompt: "app state"
+

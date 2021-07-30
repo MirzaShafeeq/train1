@@ -1,0 +1,9 @@
+- hosts: localhost
+  vars:
+    myname: Adam
+  tasks:
+    - name: Ansible Template Example
+      template:
+        src: test.j2
+        dest: /tmp/testfile       
+
